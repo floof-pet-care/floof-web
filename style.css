@@ -93,6 +93,23 @@ h1 {
   vertical-align: middle;
   margin-right: 8px;
 }
+
+.bottom-links {
+  text-align: center;
+  margin: 24px 0 8px 0;
+  font-size: 1em;
+  color: #888;
+}
+.bottom-link {
+  color: #B388EB;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.2s;
+}
+.bottom-link:hover {
+  color: #9B59B6;
+  text-decoration: underline;
+}
 @media (max-width: 900px) {
   .container {
     padding: 20px 4vw;
