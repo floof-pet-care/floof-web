@@ -21,8 +21,40 @@ body {
   --bottom-link-hover: #9B59B6;
   --bottom-link-text: #888;
 }
+[data-theme="light"] {
+  --background: #fff;
+  --container-bg: rgba(255,255,255,0.95);
+  --text: #222;
+  --heading: #B388EB;
+  --button-bg: #B388EB;
+  --button-bg-hover: #9B59B6;
+  --button-text: #fff;
+  --feature-bg: rgba(255,255,255,0.92);
+  --feature-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  --img-shadow: 0 2px 12px rgba(179,136,235,0.08);
+  --footer-text: #aaa;
+  --bottom-link: #B388EB;
+  --bottom-link-hover: #9B59B6;
+  --bottom-link-text: #888;
+}
+[data-theme="dark"] {
+  --background: #181824;
+  --container-bg: rgba(30,32,48,0.98);
+  --text: #f3f3fa;
+  --heading: #C3A6FF;
+  --button-bg: #7C4DFF;
+  --button-bg-hover: #512DA8;
+  --button-text: #fff;
+  --feature-bg: rgba(30,32,48,0.92);
+  --feature-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  --img-shadow: 0 2px 12px rgba(124,77,255,0.10);
+  --footer-text: #888;
+  --bottom-link: #C3A6FF;
+  --bottom-link-hover: #7C4DFF;
+  --bottom-link-text: #bbb;
+}
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --background: #181824;
     --container-bg: rgba(30,32,48,0.98);
     --text: #f3f3fa;
