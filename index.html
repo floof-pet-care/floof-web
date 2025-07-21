@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="floof_logo.png">
 </head>
 <body>
+  <button id="theme-toggle" aria-label="Toggle dark mode"></button>
   <div class="container">
     <img src="floof_logo.png" alt="Floof App Icon" class="app-icon" />
     <h1>Floof</h1>
@@ -60,5 +61,34 @@
       <a href="#" class="bottom-link">Help</a>
     </div>
   </div>
+  <script>
+    // Theme toggle logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    function getSystemTheme() {
+      return prefersDark ? 'dark' : 'light';
+    }
+    function getSavedTheme() {
+      return localStorage.getItem('theme');
+    }
+    function applyTheme() {
+      const saved = getSavedTheme();
+      setTheme(saved || getSystemTheme());
+    }
+    toggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+    applyTheme();
+    // Update icon if system theme changes and no user override
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!getSavedTheme()) applyTheme();
+    });
+  </script>
 </body>
 </html> 
