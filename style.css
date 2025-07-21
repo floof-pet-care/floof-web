@@ -8,6 +8,29 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  /* Add background image with transparency */
+  background-image: url('background_web_pets.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--background-overlay, rgba(255,255,255,0.7));
+  /* fallback for dark mode */
+}
+[data-theme="dark"] body::before {
+  background: var(--background-overlay-dark, rgba(24,24,36,0.7));
+}
+body > * {
+  position: relative;
+  z-index: 1;
 }
 :root {
   --background: #fff;
@@ -24,6 +47,8 @@ body {
   --bottom-link: #B388EB;
   --bottom-link-hover: #9B59B6;
   --bottom-link-text: #888;
+  --background-overlay: rgba(255,255,255,0.7);
+  --background-overlay-dark: rgba(24,24,36,0.7);
 }
 [data-theme="light"] {
   --background: #fff;
