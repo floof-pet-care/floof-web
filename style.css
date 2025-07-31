@@ -262,4 +262,33 @@ h1 {
 }
 [data-theme="dark"] {
   /* No-op: theme is handled by CSS variables, but this allows for future overrides if needed */
+}
+
+.wellness-images {
+  display: flex;
+  gap: 16px;
+  flex: 1 1 56%;
+  width: 100%;
+  max-width: 340px;
+}
+
+.wellness-images img {
+  flex: 1;
+  width: 100%;
+  max-width: 162px;
+  border-radius: 40px;
+  margin: 0;
+  box-shadow: var(--img-shadow);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .wellness-images {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .wellness-images img {
+    max-width: calc(50% - 8px);
+  }
 } 
