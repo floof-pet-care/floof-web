@@ -2,101 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Floof</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floof</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="floof_logo.png">
 </head>
 <body>
-  <button id="theme-toggle" aria-label="Toggle dark mode"></button>
-  <div class="container">
-    <img src="floof_logo.png" alt="Floof App Icon" class="app-icon" />
-    <h1>Floof</h1>
-    <div class="download-link">
-      <a href="https://testflight.apple.com/join/VHZqHqB1" target="_blank">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height:54px; width:auto; display:inline-block;" />
+  <header class="hero">
+    <div class="header-content">
+      <button class="burger-menu" id="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="app-store-button" href="https://testflight.apple.com/join/VHZqHqB1" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
       </a>
     </div>
-    <section class="feature reverse">
-      <div class="feature-text">
-        <h2>🐾 Pet Diary</h2>
-        <p>Capture your pet's life, one paw-step at a time! Record health updates, daily adventures, vet notes, and more. Add custom tags and cute pics to keep everything organized and oh-so adorable.</p>
+  </header>
+
+  <!-- Navigation Panel -->
+  <div class="nav-panel" id="nav-panel">
+    <div class="nav-content">
+      <button class="close-nav" id="close-nav">×</button>
+      <div class="nav-logo">
+        <img src="floof_logo.png" alt="Floof Logo" class="nav-logo-img">
       </div>
-      <img src="diary_phone_portrait.png" alt="Pet Diary Screenshot" />
-    </section>
-    <section class="feature">
-      <div class="feature-text">
-        <h2>👥 Collaborate with Care</h2>
-        <p>Share the fluff-responsibility! Invite partners, family, or sitters to your pet's profile so everyone's in the loop with care, cuddles, and reminders.</p>
-      </div>
-      <img src="share_pet_phone_portrait.png" alt="Collaboration Screenshot" />
-    </section>
-    <section class="feature reverse">
-      <div class="feature-text">
-        <h2>📅 My Week</h2>
-        <p>Your all-in-one pet planner! From walks to vet visits, manage every task, appointment, and recurring reminder for all your pets in one tidy view. Zen mode: activated.</p>
-      </div>
-      <img src="calendar_week_phone_portrait.png" alt="My Week Screenshot" />
-    </section>
-    <section class="feature">
-      <div class="feature-text">
-        <h2>💉 Simplified Wellness Tracking</h2>
-        <p>Track medications, vaccinations, and weight like a pro—plus view trends and history, all wrapped in one happy place.</p>
-      </div>
-      <div class="wellness-images">
-        <img src="wellness_hist_phone_portrait.png" alt="Wellness History Screenshot" />
-        <img src="wellness_phone_portrait.png" alt="Wellness Tracking Screenshot" />
-      </div>
-    </section>
-    <section class="feature reverse">
-      <div class="feature-text">
-        <h2>⚡ Quick Add</h2>
-        <p>Busy paws? No problem. Add notes, meds, or vaccine updates in seconds. Because pet parenting doesn't hit pause when life gets hectic.</p>
-      </div>
-      <img src="quickadd_phone_portrait.png" alt="Quick Add Screenshot" />
-    </section>
-    <footer class="footer">
-      <img src="floof_logo.png" alt="Floof App Icon" />
-      Floof &copy; 2025
-    </footer>
-    <div class="bottom-links">
-      <a href="privacy.html" class="bottom-link">Privacy Policy</a> |
-      <a href="#" class="bottom-link">About Us</a> |
-      <a href="#" class="bottom-link">Download IOS version</a> |
-      <a href="#" class="bottom-link">Help</a>
-    </div>
-    <div class="bottom-links">
-      <a href="mailto:floofpetcareapp@gmail.com" class="bottom-link">Contact support: floofpetcareapp@gmail.com</a>
+              <nav class="nav-menu">
+          <a href="privacy.html">Privacy</a>
+          <a href="#">About</a>
+          <a href="#">Download</a>
+          <a href="#">Help</a>
+          <a href="mailto:floofpetcareapp@gmail.com">Contact Us</a>
+        </nav>
     </div>
   </div>
-  <script>
-    // Theme toggle logic
-    const toggleBtn = document.getElementById('theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    }
-    function getSystemTheme() {
-      return prefersDark ? 'dark' : 'light';
-    }
-    function getSavedTheme() {
-      return localStorage.getItem('theme');
-    }
-    function applyTheme() {
-      const saved = getSavedTheme();
-      setTheme(saved || getSystemTheme());
-    }
-    toggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
-      setTheme(current === 'dark' ? 'light' : 'dark');
-    });
-    applyTheme();
-    // Update icon if system theme changes and no user override
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-      if (!getSavedTheme()) applyTheme();
-    });
-  </script>
+
+  <main class="slideshow-container">
+    <div class="slides">
+      <div class="slide active">
+        <div class="feature">
+          <img src="diary_phone_portrait.png" alt="Pet Diary Screenshot">
+          <div class="feature-text">
+            <div class="sub-heading-section">
+              <h3>Smart pet care with<br><span class="floof-text">Floof!</span></h3>
+            </div>
+            <h2>🐾 Pet Diary</h2>
+            <p>Capture your pet's life, one paw-step at a time! Record health updates, daily adventures, vet notes, and more. Add custom tags and cute pics to keep everything organized and oh-so adorable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="feature">
+          <img src="share_pet_phone_portrait.png" alt="Collaboration Screenshot">
+          <div class="feature-text">
+            <div class="sub-heading-section">
+              <h3>Smart pet care with<br><span class="floof-text">Floof!</span></h3>
+            </div>
+            <h2>👥 Collaborate with Care</h2>
+            <p>Share the fluff-responsibility! Invite partners, family, or sitters to your pet's profile so everyone's in the loop with care, cuddles, and reminders.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="feature">
+          <img src="calendar_week_phone_portrait.png" alt="My Week Screenshot">
+          <div class="feature-text">
+            <div class="sub-heading-section">
+              <h3>Smart pet care with<br><span class="floof-text">Floof!</span></h3>
+            </div>
+            <h2>📅 My Week</h2>
+            <p>Your all-in-one pet planner! From walks to vet visits, manage every task, appointment, and recurring reminder for all your pets in one tidy view. Zen mode: activated.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="feature">
+          <div class="wellness-images">
+            <img src="wellness_hist_phone_portrait.png" alt="Wellness History Screenshot">
+            <img src="wellness_phone_portrait.png" alt="Wellness Tracking Screenshot">
+          </div>
+          <div class="feature-text">
+            <div class="sub-heading-section">
+              <h3>Smart pet care with<br><span class="floof-text">Floof!</span></h3>
+            </div>
+            <h2>💉 Simplified Wellness Tracking</h2>
+            <p>Track medications, vaccinations, and weight like a pro—plus view trends and history, all wrapped in one happy place.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="feature">
+          <img src="quickadd_phone_portrait.png" alt="Quick Add Screenshot">
+          <div class="feature-text">
+            <div class="sub-heading-section">
+              <h3>Smart pet care with<br><span class="floof-text">Floof!</span></h3>
+            </div>
+            <h2>⚡ Quick Add</h2>
+            <p>Busy paws? No problem. Add notes, meds, or vaccine updates in seconds. Because pet parenting doesn't hit pause when life gets hectic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slideshow-controls">
+      <button class="nav-btn prev-btn" aria-label="Previous slide">‹</button>
+      <div class="slide-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+      </div>
+      <button class="nav-btn next-btn" aria-label="Next slide">›</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-text">
+        <div class="footer-first-line">
+          <img src="floof_logo.png" alt="Floof Logo" class="footer-logo">
+          <span>Floof</span>
+          <span>&copy; 2025</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="privacy.html">Privacy</a>
+          <a href="#">About</a>
+          <a href="#">Download</a>
+          <a href="#">Help</a>
+        </nav>
+        <a class="footer-email" href="mailto:floofpetcareapp@gmail.com">floofpetcareapp@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html> 
