@@ -51,6 +51,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 /* Burger Menu */
@@ -182,6 +183,29 @@ img {
   height: 40px;
 }
 
+/* Header Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.header-logo-text {
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 1.8rem;
+  color: var(--secondary);
+  font-weight: 400;
+}
+
 /* Slideshow */
 .slideshow-container {
   max-width: 1100px;
@@ -199,7 +223,7 @@ img {
 
 .sub-heading-section h3 {
   font-size: 2.4rem;
-  color: var(--text);
+  color: var(--secondary);
   margin: 0;
   font-weight: 600;
   line-height: 1.4;
