@@ -293,9 +293,10 @@ img {
   max-width: 300px;
   border-radius: 1rem;
   box-shadow: 0 0 20px var(--shadow);
-  object-fit: contain;
-  width: auto;
+  object-fit: cover;
+  width: 100%;
   height: auto;
+  max-height: 400px;
 }
 
 .wellness-images {
@@ -461,16 +462,18 @@ img {
   
   .feature img {
     max-width: 280px;
-    object-fit: contain;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     height: auto;
+    max-height: 380px;
   }
   
   .wellness-images img {
     max-width: 220px;
-    object-fit: contain;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     height: auto;
+    max-height: 280px;
   }
   
   .slideshow-container {
@@ -541,9 +544,10 @@ img {
   .feature img {
     min-width: auto;
     max-width: 250px;
-    object-fit: contain;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     height: auto;
+    max-height: 350px;
   }
   
   .wellness-images {
@@ -552,9 +556,10 @@ img {
   
   .wellness-images img {
     max-width: 200px;
-    object-fit: contain;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     height: auto;
+    max-height: 250px;
   }
   
   .footer-nav {
@@ -657,16 +662,18 @@ img {
   
   .feature img {
     max-width: 350px;
-    object-fit: contain;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     height: auto;
+    max-height: 450px;
   }
   
   .wellness-images img {
     max-width: 250px;
-    object-fit: contain;
-    width: auto;
+    object-fit: cover;
+    width: 100%;
     height: auto;
+    max-height: 320px;
   }
   
   .slideshow-container {
