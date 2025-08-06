@@ -293,7 +293,7 @@ img {
   max-width: 300px;
   border-radius: 1rem;
   box-shadow: 0 0 20px var(--shadow);
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: auto;
   max-height: 400px;
@@ -462,7 +462,7 @@ img {
   
   .feature img {
     max-width: 280px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
     max-height: 380px;
@@ -470,7 +470,7 @@ img {
   
   .wellness-images img {
     max-width: 220px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
     max-height: 280px;
@@ -544,7 +544,7 @@ img {
   .feature img {
     min-width: auto;
     max-width: 250px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
     max-height: 350px;
@@ -556,7 +556,7 @@ img {
   
   .wellness-images img {
     max-width: 200px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
     max-height: 250px;
@@ -662,7 +662,7 @@ img {
   
   .feature img {
     max-width: 350px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
     max-height: 450px;
@@ -670,7 +670,7 @@ img {
   
   .wellness-images img {
     max-width: 250px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: auto;
     max-height: 320px;
