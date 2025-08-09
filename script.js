@@ -77,28 +77,34 @@ class Slideshow {
 
 // Initialize slideshow when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new Slideshow();
+  // Only initialize slideshow if slideshow container exists
+  const slideshowContainer = document.querySelector('.slideshow-container');
+  if (slideshowContainer) {
+    new Slideshow();
+  }
   
   // Burger menu functionality
   const burgerMenu = document.getElementById('burger-menu');
   const navPanel = document.getElementById('nav-panel');
   const closeNav = document.getElementById('close-nav');
   
-  burgerMenu.addEventListener('click', () => {
-    navPanel.classList.add('open');
-    burgerMenu.classList.add('hidden');
-  });
-  
-  closeNav.addEventListener('click', () => {
-    navPanel.classList.remove('open');
-    burgerMenu.classList.remove('hidden');
-  });
-  
-  // Close menu when clicking outside
-  navPanel.addEventListener('click', (e) => {
-    if (e.target === navPanel) {
+  if (burgerMenu && navPanel && closeNav) {
+    burgerMenu.addEventListener('click', () => {
+      navPanel.classList.add('open');
+      burgerMenu.classList.add('hidden');
+    });
+    
+    closeNav.addEventListener('click', () => {
       navPanel.classList.remove('open');
       burgerMenu.classList.remove('hidden');
-    }
-  });
+    });
+    
+    // Close menu when clicking outside
+    navPanel.addEventListener('click', (e) => {
+      if (e.target === navPanel) {
+        navPanel.classList.remove('open');
+        burgerMenu.classList.remove('hidden');
+      }
+    });
+  }
 }); 
