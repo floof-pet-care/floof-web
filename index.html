@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Floof</title>
+  <meta name="description" content="Floof keeps all your pet care details organized in one place. Tasks, wellness records, shared caregiving, and more.">
+  <title>Floof - Pet Care, Organized</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,23 +12,25 @@
   <link rel="icon" type="image/png" href="floof_logo.png">
 </head>
 <body>
-  <header class="hero">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero site-header">
     <div class="header-content">
-      <button class="burger-menu" id="burger-menu">
+      <button class="burger-menu" id="burger-menu" aria-controls="nav-panel" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-      </div>
+
       <div class="header-logo">
-        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+        <a class="brand-link" href="index.html" aria-label="Floof Home">
           <img src="floof_logo.png" alt="Floof Logo" class="header-logo-img">
           <span class="header-logo-text">Floof</span>
         </a>
       </div>
-      <a class="app-store-button" href="https://testflight.apple.com/join/VHZqHqB1" target="_blank">
+
+
+      <a class="app-store-button" href="https://apps.apple.com/us/app/floof-smart-pet-care/id6753661709" target="_blank" rel="noopener">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
       </a>
     </div>
@@ -41,114 +44,193 @@
         <img src="floof_logo.png" alt="Floof Logo" class="nav-logo-img">
       </div>
               <nav class="nav-menu">
-          <a href="#">Download</a>
+          <a href="#download">Download</a>
           <a href="privacy.html">Privacy</a>
           <a href="#">Help</a>
           <a href="mailto:floofpetcareapp@gmail.com">Contact Us</a>
+          <a href="terms.html">Terms of Service</a>
         </nav>
     </div>
   </div>
 
-  <main class="slideshow-container">
-    <div class="slides">
-      <div class="slide active">
-        <div class="feature">
-          <img src="diary_phone_portrait.png" alt="Pet Diary Screenshot">
-          <div class="feature-text">
-            <div class="sub-heading-section">
-              <h3>Smart pet care for your furry friends!</h3>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-brand">
+          </div>
+
+          <h1>Built for pet parents, by pet parents.</h1>
+          <p class="hero-subheadline">
+            Floof is an intuitive pet care app that makes caring for your furry family members simple, organized, and fun.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://apps.apple.com/us/app/floof-smart-pet-care/id6753661709" target="_blank" rel="noopener">
+              Download
+            </a>
+            <a class="btn btn-secondary" href="#preview">Explore features</a>
+          </div>
+
+          
+        </div>
+
+        <div class="hero-visual" aria-label="Floof app preview">
+          <div class="hero-visual-bg" aria-hidden="true">
+            <img src="background_web_pets.png" alt="" />
+          </div>
+
+          <div class="device-stack">
+            <div class="device device--front">
+              <img src="diary_phone_portrait.png" alt="Pet Diary screenshot">
             </div>
-            <h2>🐾 Pet Diary</h2>
-            <p>Capture your pet's life, one paw-step at a time! Record health updates, daily adventures, vet notes, and more. Add custom tags and cute pics to keep everything organized and oh-so adorable.</p>
+            <div class="device device--mid">
+              <img src="calendar_week_phone_portrait.png" alt="My Week screenshot">
+            </div>
+            <div class="device device--back">
+              <img src="share_pet_phone_portrait.png" alt="Shared pet care screenshot">
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="slide">
-        <div class="feature">
-          <img src="share_pet_phone_portrait.png" alt="Collaboration Screenshot">
-          <div class="feature-text">
-            <div class="sub-heading-section">
-              <h3>Smart pet care for your furry friends!</h3>
+    <!-- Benefits -->
+    <section id="benefits" class="section section-alt benefits-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>More cuddles, less chaos</h2>
+          <p>Reduce the mental load of keeping your pets happy and healthy.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Stay organized</h3>
+            <p>Everything you need — reminders, medications and notes—stays in one place.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Reduce mental load</h3>
+            <p>Stop juggling pet to-dos and daily life. Floof helps you remember what matters.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Keep everyone aligned</h3>
+            <p>Share updates with family and caregivers so care stays consistent.</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Access info quickly</h3>
+            <p>Capture details efficiently, then keep them at your fingertips.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot showcase -->
+    <section id="preview" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>See Floof in action</h2>
+        </div>
+
+        <div class="screenshots-wrap">
+          <div class="slideshow-container screenshot-showcase">
+            <div class="slides">
+              <div class="slide active">
+                <figure class="shot">
+                  <img src="diary_phone_portrait.png" alt="Pet Diary screenshot">
+                  <figcaption class="shot-caption">
+                    <span class="shot-caption-title">Notes & Memories</span>
+                    <p class="shot-caption-desc">Save important info, documents, and moments so nothing gets lost.</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="slide">
+                <figure class="shot">
+                  <img src="share_pet_phone_portrait.png" alt="Collaboration screenshot">
+                  <figcaption class="shot-caption">
+                    <span class="shot-caption-title">Shared pet care</span>
+                    <p class="shot-caption-desc">Invite family or caregivers so everyone stays aligned with care updates.</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="slide">
+                <figure class="shot">
+                  <img src="calendar_week_phone_portrait.png" alt="My Week screenshot">
+                  <figcaption class="shot-caption">
+                    <span class="shot-caption-title">All Reminders</span>
+                    <p class="shot-caption-desc">Keep walks, vet visits, and recurring reminders in one tidy view.</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+             <div class="slide">
+                <figure class="shot">
+                    <img src="wellness_phone_portrait.png" alt="wellness screenshot">
+                  <figcaption class="shot-caption">
+                    <span class="shot-caption-title">Wellness Tracking</span>
+                    <p class="shot-caption-desc">Track meds, vaccinations, and wellness trends with clear history.</p>
+                  </figcaption>
+                </figure>
+              </div>  
+
+              <div class="slide">
+                <figure class="shot">
+                  <img src="quickadd_phone_portrait.png" alt="Quick Add screenshot">
+                  <figcaption class="shot-caption">
+                    <span class="shot-caption-title">Quick Add</span>
+                    <p class="shot-caption-desc">Quickly capture all details without admin overload.</p>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
-            <h2>👥 Collaborate with Care</h2>
-            <p>Share the fluff-responsibility! Invite partners, family, or sitters to your pet's profile so everyone's in the loop with care, cuddles, and reminders.</p>
+
+              
+
+            <div class="slideshow-controls" aria-label="Screenshot navigation">
+              <button class="nav-btn prev-btn" aria-label="Previous screenshot">‹</button>
+              <div class="slide-indicators" role="tablist" aria-label="Choose a screenshot">
+                <button class="indicator active" data-slide="0" role="tab" aria-label="Notes, records and memories"></button>
+                <button class="indicator" data-slide="1" role="tab" aria-label="Shared pet care"></button>
+                <button class="indicator" data-slide="2" role="tab" aria-label="Tasks and appointments"></button>
+                <button class="indicator" data-slide="3" role="tab" aria-label="Medications and wellness"></button>
+                <button class="indicator" data-slide="4" role="tab" aria-label="Expenses and meals"></button>
+              </div>
+              <button class="nav-btn next-btn" aria-label="Next screenshot">›</button>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="slide">
-        <div class="feature">
-          <img src="calendar_week_phone_portrait.png" alt="My Week Screenshot">
-          <div class="feature-text">
-            <div class="sub-heading-section">
-              <h3>Smart pet care for your furry friends!</h3>
-            </div>
-            <h2>📅 My Week</h2>
-            <p>Your all-in-one pet planner! From walks to vet visits, manage every task, appointment, and recurring reminder for all your pets in one tidy view. Zen mode: activated.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="slide">
-        <div class="feature">
-          <div class="wellness-images">
-            <img src="wellness_hist_phone_portrait.png" alt="Wellness History Screenshot">
-            <img src="wellness_phone_portrait.png" alt="Wellness Tracking Screenshot">
-          </div>
-          <div class="feature-text">
-            <div class="sub-heading-section">
-              <h3>Smart pet care for your furry friends!</h3>
-            </div>
-            <h2>💉 Simplified Wellness Tracking</h2>
-            <p>Track medications, vaccinations, and weight like a pro—plus view trends and history, all wrapped in one happy place.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="feature">
-          <img src="quickadd_phone_portrait.png" alt="Quick Add Screenshot">
-          <div class="feature-text">
-            <div class="sub-heading-section">
-              <h3>Smart pet care for your furry friends!</h3>
-            </div>
-            <h2>⚡ Quick Add</h2>
-            <p>Busy paws? No problem. Add notes, meds, or vaccine updates in seconds. Because pet parenting doesn't hit pause when life gets hectic.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slideshow-controls">
-      <button class="nav-btn prev-btn" aria-label="Previous slide">‹</button>
-      <div class="slide-indicators">
-        <button class="indicator active" data-slide="0"></button>
-        <button class="indicator" data-slide="1"></button>
-        <button class="indicator" data-slide="2"></button>
-        <button class="indicator" data-slide="3"></button>
-        <button class="indicator" data-slide="4"></button>
-      </div>
-      <button class="nav-btn next-btn" aria-label="Next slide">›</button>
-    </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-text">
+  <footer class="footer site-footer" aria-label="Footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
         <div class="footer-first-line">
           <img src="floof_logo.png" alt="Floof Logo" class="footer-logo">
-          <span>Floof</span>
-          <span>&copy; 2025</span>
+          <span class="footer-brand-name">Floof</span>
+          <span class="footer-copyright">&copy; 2025</span>
         </div>
-        <nav class="footer-nav">
-          <a href="privacy.html">Privacy</a>
-          <a href="#">About</a>
-          <a href="#">Download</a>
-          <a href="#">Help</a>
-        </nav>
         <a class="footer-email" href="mailto:floofpetcareapp@gmail.com">floofpetcareapp@gmail.com</a>
       </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+
+
     </div>
   </footer>
 
