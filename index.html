@@ -59,10 +59,9 @@
     <section class="hero-section">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="hero-brand">
-          </div>
+          <p class="hero-eyebrow">Pet care, simplified</p>
 
-          <h1>Built for pet parents, by pet parents.</h1>
+          <h1>Built for pet parents, <span class="accent">by pet parents</span>.</h1>
           <p class="hero-subheadline">
             Floof is an intuitive pet care app that makes caring for your furry family members simple, organized, and fun.
           </p>
@@ -78,9 +77,8 @@
         </div>
 
         <div class="hero-visual" aria-label="Floof app preview">
-          <div class="hero-visual-bg" aria-hidden="true">
-            <img src="background_web_pets.png" alt="" />
-          </div>
+          <div class="hero-blob hero-blob--a" aria-hidden="true"></div>
+          <div class="hero-blob hero-blob--b" aria-hidden="true"></div>
 
           <div class="device-stack">
             <div class="device device--front">
@@ -212,27 +210,27 @@
 
   </main>
 
-  <footer class="footer site-footer" aria-label="Footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="footer-first-line">
-          <img src="floof_logo.png" alt="Floof Logo" class="footer-logo">
-          <span class="footer-brand-name">Floof</span>
-          <span class="footer-copyright">&copy; 2025</span>
-        </div>
-        <a class="footer-email" href="mailto:floofpetcareapp@gmail.com">floofpetcareapp@gmail.com</a>
-      </div>
-
-      <div class="footer-col">
-        <div class="footer-col-title">Company</div>
+  <footer class="footer-mini" aria-label="Footer">
+    <div class="footer-mini-inner">
+      <a class="footer-mini-brand" href="index.html">
+        <img src="floof_logo.png" alt="Floof Logo" class="footer-mini-logo">
+        <span>Floof</span>
+      </a>
+      <nav class="footer-mini-nav">
         <a href="our-story.html">Our Story</a>
-        <a href="#">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms of Service</a>
-      </div>
-
-
+        <a href="#">Help</a>
+      </nav>
+      <a class="footer-mini-email" href="mailto:floofpetcareapp@gmail.com">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2.5 5.5h15a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.3"/>
+          <path d="m2.5 6 7.5 5.5L17.5 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        floofpetcareapp@gmail.com
+      </a>
     </div>
+    <p class="footer-mini-copy">&copy; 2025 Floof. Made with love for pets everywhere.</p>
   </footer>
 
   <script src="script.js"></script>
