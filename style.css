@@ -358,14 +358,42 @@ img {
 
 /* Privacy Page Styles */
 .privacy-container {
+  position: relative;
+  overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1rem;
   min-height: calc(100vh - 200px);
 }
 
+.privacy-blob {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 58% 42% 55% 45% / 45% 55% 45% 55%;
+  filter: blur(2px);
+}
+
+.privacy-blob--a {
+  width: 46%;
+  height: 40%;
+  top: -4%;
+  left: -10%;
+  background: var(--sage-soft);
+}
+
+.privacy-blob--b {
+  width: 42%;
+  height: 36%;
+  bottom: -4%;
+  right: -8%;
+  background: var(--accent-soft);
+}
+
 .privacy-content {
-  background: var(--bg);
+  position: relative;
+  z-index: 1;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 6px var(--shadow);
@@ -387,14 +415,14 @@ img {
 }
 
 .privacy-text h2 {
-  color: var(--accent);
+  color: #000;
   font-size: 1.3rem;
   margin: 2rem 0 1rem 0;
   font-weight: 600;
 }
 
 .privacy-text h3 {
-  color: var(--primary-pressed);
+  color: #000;
   font-size: 1.1rem;
   margin: 1.5rem 0 0.5rem 0;
   font-weight: 600;
