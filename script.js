@@ -1,88 +1,4 @@
-// Slideshow functionality
-class Slideshow {
-  constructor() {
-    this.currentSlide = 0;
-    this.slides = document.querySelectorAll('.slide');
-    this.indicators = document.querySelectorAll('.indicator');
-    this.prevBtn = document.querySelector('.prev-btn');
-    this.nextBtn = document.querySelector('.next-btn');
-    this.totalSlides = this.slides.length;
-    
-    this.init();
-  }
-  
-  init() {
-    this.prevBtn.addEventListener('click', () => this.prevSlide());
-    this.nextBtn.addEventListener('click', () => this.nextSlide());
-    
-    this.indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => this.goToSlide(index));
-    });
-    
-    // Auto-advance slides
-    this.startAutoAdvance();
-    
-    // Pause auto-advance on hover
-    const slideshowContainer = document.querySelector('.slideshow-container');
-    slideshowContainer.addEventListener('mouseenter', () => this.pauseAutoAdvance());
-    slideshowContainer.addEventListener('mouseleave', () => this.startAutoAdvance());
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') this.prevSlide();
-      if (e.key === 'ArrowRight') this.nextSlide();
-    });
-  }
-  
-  goToSlide(index) {
-    // Remove active class from current slide and indicator
-    this.slides[this.currentSlide].classList.remove('active');
-    this.indicators[this.currentSlide].classList.remove('active');
-    
-    // Update current slide
-    this.currentSlide = index;
-    
-    // Add active class to new slide and indicator
-    this.slides[this.currentSlide].classList.add('active');
-    this.indicators[this.currentSlide].classList.add('active');
-  }
-  
-  nextSlide() {
-    const nextIndex = (this.currentSlide + 1) % this.totalSlides;
-    this.goToSlide(nextIndex);
-  }
-  
-  prevSlide() {
-    const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
-    this.goToSlide(prevIndex);
-  }
-  
-  startAutoAdvance() {
-    // Clear any existing interval first
-    if (this.autoAdvanceInterval) {
-      clearInterval(this.autoAdvanceInterval);
-    }
-    
-    this.autoAdvanceInterval = setInterval(() => {
-      this.nextSlide();
-    }, 4000); // Change slide every 4 seconds
-  }
-  
-  pauseAutoAdvance() {
-    if (this.autoAdvanceInterval) {
-      clearInterval(this.autoAdvanceInterval);
-    }
-  }
-}
-
-// Initialize slideshow when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Only initialize slideshow if slideshow container exists
-  const slideshowContainer = document.querySelector('.slideshow-container');
-  if (slideshowContainer) {
-    new Slideshow();
-  }
-  
   // Burger menu functionality
   const burgerMenu = document.getElementById('burger-menu');
   const navPanel = document.getElementById('nav-panel');
@@ -107,4 +23,51 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-}); 
+
+  // GSAP: focal hero motion + scroll reveal. Progressive enhancement only —
+  // the page is already fully visible and usable via CSS defaults if this
+  // script or the vendored GSAP files fail to load.
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Images below the fold (showcase screenshots, hero devices) have no
+    // explicit dimensions, so the page grows taller as they load in. Without
+    // this, ScrollTrigger caches trigger positions from the shorter
+    // pre-image-load layout, and later triggers (showcase, footer) can end
+    // up unreachable — stuck at opacity:0 forever.
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      el.classList.add('reveal-ready');
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => el.classList.add('reveal-visible'),
+      });
+    });
+
+    gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+      const devices = document.querySelectorAll('.device--front, .device--mid, .device--back');
+      if (!devices.length) return;
+
+      // One bound group, fixed phase offsets (not independent/drifting bobs):
+      // the three phones "breathe together" in product order (diary, calendar, share).
+      const floatTl = gsap.timeline({ repeat: -1, yoyo: true, defaults: { ease: 'sine.inOut' } });
+      devices.forEach((el, i) => {
+        floatTl.to(el, { '--float-y': '-7px', duration: 2 }, i * 0.6);
+      });
+
+      // Nonessential loop stops when the hero is offscreen.
+      ScrollTrigger.create({
+        trigger: '.hero-visual',
+        start: 'top bottom',
+        end: 'bottom top',
+        toggleActions: 'play pause resume pause',
+        animation: floatTl,
+      });
+
+      return () => floatTl.kill();
+    });
+  }
+});
