@@ -342,6 +342,28 @@ img {
   color: var(--primary-pressed);
 }
 
+.footer-mini-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.footer-mini-social svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-pressed);
+}
+
+.footer-mini-nav a.footer-mini-social:hover {
+  border-color: var(--primary-pressed);
+  color: var(--primary-pressed);
+}
+
 .footer-mini-copy {
   text-align: center;
   margin-top: 1.75rem;
